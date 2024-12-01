@@ -25,7 +25,7 @@
     - [Accessing Items in a set](#accessing-items-in-a-set)
     - [Adding items to a set](#adding-items-to-a-set)
     - [Removing Items from a set](#removing-items-from-a-set)
-
+    - [Example Problem on Adding and deleting elements from the set](#example-problem-add-some-elements-into-set-and-delete-some-elements-from-the-set)
 
 
 # Python Collections: Lists
