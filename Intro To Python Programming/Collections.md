@@ -20,6 +20,11 @@
     - [Removing Items](#removing-items)
     - [Creating a Dictionary with dict()](#creating-a-dictionary-with-dict)
     - [Example Problem: Updating the value in dictioanry and Adding the Default value into Dictionary](#example-problem-updating-the-value-in-dictioanry-and-adding-the-default-value-into-dictionary)
+- [Python Collections: Sets](#python-sets)
+    - [Using Set()](#using-set)
+    - [Accessing Items in a set](#accessing-items-in-a-set)
+    - [Adding items to a set](#adding-items-to-a-set)
+    - [Removing Items from a set](#removing-items-from-a-set)
 
 
 
@@ -324,4 +329,105 @@ if __name__ == '__main__':
 ('Thursday', 4)
 ('Tuesday', 2)
 ('Wednesday', 3)
+```
+
+# Python Sets
+
+A **set** is a collection that is **unordered** and **unindexed**. In Python, sets are written with curly brackets, and they cannot contain duplicate elements.
+
+```python
+my_set = {'one', 'two', 'three'}
+print(my_set)
+```
+
+### **Using set():**
+Sets can also be created using the set() constructor:
+```python
+my_set = set(['one', 'two', 'three'])
+print(my_set)
+```
+**Note:** Sets are unordered, so you cannot be sure in which order the items will appear.
+
+### **Accessing Items in a Set**
+You cannot access items in a set by referring to an index or a key. However, you can:
+
+- Loop through the set using a for loop.
+- Check if a specified value exists in a set using the in keyword.
+```python
+my_set = {'one', 'two', 'three'}
+for val in my_set:
+    print(val)
+```
+### Adding Items to a Set
+Once a set is created, you cannot change its items, but you can add new items.
+
+- **Using add():**
+```python
+my_set = {'one', 'two', 'three'}
+my_set.add('four')
+print(my_set)
+```
+- **Using update():**
+The update() method can add multiple items to a set from another sequence:
+```python
+my_set = {'one', 'two', 'three'}
+my_set.update(['four', 'five', 'six'])
+print(my_set)
+# Output: {'one', 'two', 'three', 'four', 'five', 'six'}
+# No duplicates are added.
+```
+
+### Removing Items from a Set
+Items can be removed using the remove() or discard() methods.
+
+### Key Differences:
+**remove():** Raises an error if the item does not exist.
+**discard():** Does NOT raise an error if the item does not exist.
+```python
+my_set = {'one', 'two', 'three', 'four'}
+
+# Using remove()
+my_set.remove('one')  # Removes 'one' from my_set
+
+# Using discard()
+my_set.discard('three')  # Removes 'three' from my_set
+
+# Error handling:
+my_set.remove('five')  # Throws an error
+my_set.discard('five')  # Will NOT throw an error
+```
+### Example Problem: Add some elements into set and delete some elements from the set.
+```python
+def main():
+    my_set = set([1, 3, 2, 4, 1, 3, 3, 0])
+    print("Before Adding elemets into the set", my_set)
+    
+    # add 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 to my_set
+    my_set.update([10,12,13,14,15,16,17,18,19,20,21,22,23])
+    print("After adding elements into the set: ", my_set)
+    
+    # delete 2 and 3 from my_set
+    
+    my_set.remove(2)
+    my_set.remove(3)
+    
+    print("After removing elements from the 2nd and 3rd index: ", my_set)
+    
+    li = list(my_set)
+    li.sort()
+    print("Elements in the sorted list format: ")
+    print(li)
+    return 0
+
+if __name__ == '__main__':
+    main()
+
+```
+### Output:
+```
+Before Adding elemets into the set {0, 1, 2, 3, 4}
+After adding elements into the set:  {0, 1, 2, 3, 4, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23}
+After removing elements from the 2nd and 3rd index:  {0, 1, 4, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23}
+Elements in the sorted list format:
+[0, 1, 4, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
 ```
